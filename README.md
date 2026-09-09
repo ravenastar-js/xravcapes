@@ -14,6 +14,7 @@ Feito por **ravenastar.com**.
   <a title="Fabric API" href="https://github.com/FabricMC/fabric">
     <img src="https://i.imgur.com/Ol1Tcf8.png" width="151" height="50" />
   </a>
+  <br /><br />
   <a title="Minha Collection no Modrinth" href="https://modrinth.com/collection/QEwOIHfO">
     <img src="https://img.shields.io/badge/Modrinth-Collection-00AF5C?style=for-the-badge&logo=modrinth&logoColor=white" alt="Modrinth Collection" />
   </a>
@@ -82,6 +83,6 @@ chamada `new SkinTextures(...)` dentro de `PlayerListEntryMixin.java`. Esse
 
 <div align="center">
 
-## Feito com 💚 por [RavenaStar](https://linktr.ee/ravenastar)
+## Feito com 💚 por [RavenaStar](https://ravenastar.com)
 
 </div>

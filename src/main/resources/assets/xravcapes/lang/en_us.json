@@ -1,0 +1,19 @@
+{
+  "xravcapes.title": "XRAV CAPES",
+  "xravcapes.screen.title": "Cape Settings",
+  "xravcapes.screen.source": "Cape Source",
+  "xravcapes.screen.source.auto": "Automatic (Priority)",
+  "xravcapes.screen.source.optifine": "OptiFine Cape",
+  "xravcapes.screen.source.vanilla": "Minecraft Cape",
+  "xravcapes.screen.source.off": "Disabled",
+  "xravcapes.screen.preview": "Preview",
+  "xravcapes.screen.priority": "Priority order",
+  "xravcapes.screen.reload": "Reload Capes",
+  "xravcapes.screen.close": "Close",
+  "xravcapes.screen.credits": "XRAV CAPES by ravenastar.com",
+  "xravcapes.priority.optifine": "OptiFine (1.0)",
+  "xravcapes.priority.vanilla": "Minecraft Original (0.9)",
+  "xravcapes.priority.other": "Other Sources (0.8)",
+  "xravcapes.command.reloaded": "Capes reloaded successfully.",
+  "xravcapes.command.opened": "Opening XRAV CAPES menu."
+}

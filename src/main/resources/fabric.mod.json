@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "xravcapes",
+  "version": "${version}",
+  "name": "XRAV CAPES",
+  "description": "Exibe capas do OptiFine e capas padrão/originais do Minecraft para qualquer jogador, sem precisar do OptiFine instalado. Mod 100% client-side, com sistema de prioridade configurável entre as fontes de capa. Use /xravcapes para abrir o menu de configurações ou /xravcapes reload para forçar a atualização das capas.",
+  "authors": [
+    "RavenaStar (ravenastar.com)"
+  ],
+  "contact": {
+    "homepage": "https://ravenastar.com"
+  },
+  "icon": "assets/xravcapes/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.ravenastar.xravcapes.XRavCapesClient"
+    ]
+  },
+  "mixins": [
+    "xravcapes.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.0",
+    "minecraft": "1.21.11",
+    "fabric-api": "*",
+    "java": ">=21"
+  }
+}

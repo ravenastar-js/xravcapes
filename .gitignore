@@ -1,0 +1,23 @@
+# Gradle
+.gradle/
+build/
+out/
+
+# Fabric Loom / Minecraft run data
+run/
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+bin/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs / local config generated at runtime
+*.log

@@ -1,0 +1,19 @@
+{
+  "xravcapes.title": "XRAV CAPES",
+  "xravcapes.screen.title": "Configurações de Capa",
+  "xravcapes.screen.source": "Fonte da Capa",
+  "xravcapes.screen.source.auto": "Automático (Prioridade)",
+  "xravcapes.screen.source.optifine": "Capa do OptiFine",
+  "xravcapes.screen.source.vanilla": "Capa do Minecraft",
+  "xravcapes.screen.source.off": "Desativado",
+  "xravcapes.screen.preview": "Pré-visualização",
+  "xravcapes.screen.priority": "Ordem de prioridade",
+  "xravcapes.screen.reload": "Recarregar Capas",
+  "xravcapes.screen.close": "Fechar",
+  "xravcapes.screen.credits": "XRAV CAPES por ravenastar.com",
+  "xravcapes.priority.optifine": "OptiFine (1.0)",
+  "xravcapes.priority.vanilla": "Minecraft Original (0.9)",
+  "xravcapes.priority.other": "Outras Fontes (0.8)",
+  "xravcapes.command.reloaded": "Capas recarregadas com sucesso.",
+  "xravcapes.command.opened": "Abrindo o menu do XRAV CAPES."
+}

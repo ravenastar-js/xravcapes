@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "com.ravenastar.xravcapes.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "PlayerListEntryMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

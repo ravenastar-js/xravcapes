@@ -8,7 +8,8 @@
     "RavenaStar (ravenastar.com)"
   ],
   "contact": {
-    "homepage": "https://ravenastar.com"
+    "homepage": "https://ravenastar.com",
+    "sources": "https://github.com/ravenastar-js/xravcapes"
   },
   "icon": "assets/xravcapes/icon.png",
   "environment": "client",

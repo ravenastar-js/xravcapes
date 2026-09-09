@@ -57,8 +57,6 @@ Este projeto está **travado especificamente na versão `1.21.11`**:
 
 O `fabric.mod.json` também declara a dependência exata `"minecraft": "1.21.11"`, então o mod recusa carregar em qualquer outra versão, evitando comportamento quebrado/instável em versões não testadas.
 
-Se um dia quiser portar para outra `1.21.x`, basta ajustar essas mesmas linhas em `gradle.properties`, o valor de `"minecraft"` no `fabric.mod.json` e, se o build reclamar do construtor de `SkinTextures`, ajustar apenas a chamada `new SkinTextures(...)` dentro de `PlayerListEntryMixin.java`. Esse é o único ponto sensível a mudanças de mapeamento entre versões.
-
 ## 📜 Créditos
 
 <div align="center">

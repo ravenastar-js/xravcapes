@@ -1,12 +1,8 @@
-# XRAV CAPES
+# XRAVCAPES
 
-[![Build](https://github.com/ravenastar-js/xravcapes/actions/workflows/build.yml/badge.svg)](https://github.com/ravenastar-js/xravcapes/actions/workflows/build.yml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Minecraft](https://img.shields.io/badge/minecraft-1.21.11-brightgreen.svg)](https://fabricmc.net/use/installer/)
+[![Build](https://github.com/ravenastar-js/xravcapes/actions/workflows/build.yml/badge.svg)](https://github.com/ravenastar-js/xravcapes/actions/workflows/build.yml) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Minecraft](https://img.shields.io/badge/minecraft-1.21.11-brightgreen.svg)](https://fabricmc.net/use/installer/)
 
-Mod **client-side** para Fabric (Minecraft `1.21.11`) que exibe capas do
-OptiFine e capas nativas/padrão do Minecraft, sem precisar do OptiFine
-instalado.
+Mod **client-side** para Fabric (Minecraft `1.21.11`) que exibe capas do OptiFine e capas nativas/padrão do Minecraft, sem precisar do OptiFine instalado.
 
 <p align="center">
   <a title="Fabric API" href="https://github.com/FabricMC/fabric">
@@ -27,11 +23,9 @@ instalado.
 | Minecraft | `1.21.11` | *(nenhum link aplicável)* |
 | Java | `>= 21` | [Adoptium](https://adoptium.net/) |
 
-Todos os requisitos acima já são declarados como dependências no
-`fabric.mod.json`; o Fabric Loader recusa carregar o XRAV CAPES se algum
-deles estiver ausente ou em versão incompatível.
+Todos os requisitos acima já são declarados como dependências no `fabric.mod.json`; o Fabric Loader recusa carregar o XRAVCAPES se algum deles estiver ausente ou em versão incompatível.
 
----
+> 💡 Instale o Minecraft 1.21.11 usando o Fabric Loader.
 
 ## ✨ Funcionalidades
 
@@ -41,41 +35,29 @@ deles estiver ausente ou em versão incompatível.
   | Capa do OptiFine | **1.0** |
   | Capa padrão/original do Minecraft | **0.9** |
   | Outras capas (fonte customizada) | **0.8** |
-- Menu de configurações acessado inteiramente por comando (sem atalho de
-  teclado), com `/xravcapes` para escolher:
-  - **Automático**, que respeita a hierarquia acima. Se o jogador tiver capa
-    do OptiFine e do Minecraft, o mod sempre mostra a do OptiFine.
+- Menu de configurações acessado inteiramente por comando (sem atalho de teclado), com `/xravcapes` para escolher:
+  - **Automático**, que respeita a hierarquia acima. Se o jogador tiver capa do OptiFine e do Minecraft, o mod sempre mostra a do OptiFine.
   - Forçar sempre **OptiFine**.
   - Forçar sempre **Minecraft (vanilla)**.
   - **Desativar** a exibição customizada.
 - Pré-visualização rápida da capa resolvida no próprio menu.
 - `/xravcapes reload` para forçar a atualização das capas em cache.
 - **100% client-side**: não precisa estar no servidor.
-- Tradução automática: usa `pt_br` / `pt_pt` se o idioma do Minecraft do
-  jogador for português, e cai para `en_us` (padrão) em qualquer outro idioma.
-  Isso é feito pelo próprio sistema de idiomas do Minecraft, sem código
-  extra, então funciona de forma automática e nativa.
+- Tradução automática: usa `pt_br` / `pt_pt` se o idioma do Minecraft do jogador for português, e cai para `en_us` (padrão) em qualquer outro idioma. Isso é feito pelo próprio sistema de idiomas do Minecraft, sem código extra, então funciona de forma automática e nativa.
 
 ## 🔧 Compatibilidade
 
 Este projeto está **travado especificamente na versão `1.21.11`**:
 
 - `minecraft_version=1.21.11`
-- `yarn_mappings=1.21.11+build.6` (última build de Yarn disponível; a partir
-  da próxima versão principal a Mojang passa a exigir Mojang Mappings)
+- `yarn_mappings=1.21.11+build.6` (última build de Yarn disponível; a partir da próxima versão principal a Mojang passa a exigir Mojang Mappings)
 - `loader_version=0.18.1` (mínimo exigido pelo Fabric para 1.21.11)
 - `fabric_version=0.141.6+1.21.11`
 - Loom `1.14`, exigido a partir do 1.21.11
 
-O `fabric.mod.json` também declara a dependência exata
-`"minecraft": "1.21.11"`, então o mod recusa carregar em qualquer outra
-versão, evitando comportamento quebrado/instável em versões não testadas.
+O `fabric.mod.json` também declara a dependência exata `"minecraft": "1.21.11"`, então o mod recusa carregar em qualquer outra versão, evitando comportamento quebrado/instável em versões não testadas.
 
-Se um dia quiser portar para outra `1.21.x`, basta ajustar essas mesmas
-linhas em `gradle.properties`, o valor de `"minecraft"` no `fabric.mod.json`
-e, se o build reclamar do construtor de `SkinTextures`, ajustar apenas a
-chamada `new SkinTextures(...)` dentro de `PlayerListEntryMixin.java`. Esse
-é o único ponto sensível a mudanças de mapeamento entre versões.
+Se um dia quiser portar para outra `1.21.x`, basta ajustar essas mesmas linhas em `gradle.properties`, o valor de `"minecraft"` no `fabric.mod.json` e, se o build reclamar do construtor de `SkinTextures`, ajustar apenas a chamada `new SkinTextures(...)` dentro de `PlayerListEntryMixin.java`. Esse é o único ponto sensível a mudanças de mapeamento entre versões.
 
 ## 📜 Créditos
 

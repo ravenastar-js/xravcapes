@@ -1,4 +1,4 @@
-name: Build
+name: 🚀 xravcapes - Build & Release
 
 on:
   push:
@@ -16,40 +16,84 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: 🛠️ Checkout repository
+        uses: actions/checkout@v5
 
-      - name: Set up JDK 21
+      - name: ⎔ Set up JDK 21
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 21
 
-      - name: Set up Gradle
+      - name: ⚙️ Set up Gradle
         uses: gradle/actions/setup-gradle@v4
 
-      - name: Make gradlew executable
+      - name: 🔓 Make gradlew executable
         run: chmod +x ./gradlew
 
-      - name: Build mod with Gradle
+      - name: 🔨 Build mod with Gradle
         run: ./gradlew build --stacktrace
 
-      - name: Locate built jar(s)
-        id: jars
+      - name: 🔍 Locate built jar(s)
         run: |
-          echo "Arquivos gerados em build/libs:"
+          echo "📦 Arquivos gerados em build/libs:"
           ls -la build/libs
 
-      - name: Upload build artifact
+      - name: 🏷️ Resolve release version
+        id: version
+        run: |
+          if [[ "${{ github.ref_type }}" == "tag" ]]; then
+            RAW_TAG="${{ github.ref_name }}"
+          else
+            RAW_TAG="${{ github.ref_name }}"
+          fi
+          VERSION="${RAW_TAG#v}"
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "📋 Versão resolvida: $VERSION"
+
+      - name: 📤 Upload build artifact
         uses: actions/upload-artifact@v4
         with:
           name: xravcapes-jar
           path: build/libs/*.jar
           if-no-files-found: error
 
-      - name: Create GitHub Release
+      - name: 🎉 Create GitHub Release
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
         with:
           files: build/libs/*.jar
+          name: "🌱 v${{ steps.version.outputs.version }}"
+          body: |
+            ## 🚀 XRAV CAPES publicado!
+
+            **🧥 Mod client-side para Fabric (Minecraft `1.21.11`) que exibe capas do OptiFine e capas nativas/padrão do Minecraft, sem precisar do OptiFine instalado.**
+
+            ---
+
+            ## 🥇 Hierarquia de prioridade das capas
+
+            | Fonte | Score |
+            |---|---|
+            | 🧡 Capa do OptiFine | **1.0** |
+            | 💚 Capa padrão/original do Minecraft | **0.9** |
+            | 🔵 Outras capas (fonte customizada) | **0.8** |
+
+            ---
+
+            ## 🔗 Links úteis
+
+            - **💻 [Código-fonte](https://github.com/ravenastar-js/xravcapes)**
+            - **🧵 [Fabric API (Modrinth)](https://modrinth.com/mod/fabric-api)**
+
+            ---
+
+            **🌱 Versão:** ${{ steps.version.outputs.version }}
+            **🔖 Tag:** ${{ github.ref_name }}
+            **🎮 Minecraft:** `1.21.11` (Fabric Loader `>= 0.18.0`)
+            **⚡ Publicado automaticamente via GitHub Actions**
+
+            > 🎯 **Uso:** exibir capas do OptiFine e do Minecraft no client, sem depender do OptiFine instalado.
+          draft: false
+          prerelease: false
           generate_release_notes: true

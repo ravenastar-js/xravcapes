@@ -8,8 +8,6 @@ Mod **client-side** para Fabric (Minecraft `1.21.11`) que exibe capas do
 OptiFine e capas nativas/padrão do Minecraft, sem precisar do OptiFine
 instalado.
 
-Feito por **ravenastar.com**.
-
 <p align="center">
   <a title="Fabric API" href="https://github.com/FabricMC/fabric">
     <img src="https://i.imgur.com/Ol1Tcf8.png" width="151" height="50" />

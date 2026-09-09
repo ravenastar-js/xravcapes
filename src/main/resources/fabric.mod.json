@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "id": "xravcapes",
   "version": "${version}",
-  "name": "XRAV CAPES",
-  "description": "Exibe capas do OptiFine e capas padrão/originais do Minecraft para qualquer jogador, sem precisar do OptiFine instalado. Mod 100% client-side, com sistema de prioridade configurável entre as fontes de capa. Use /xravcapes para abrir o menu de configurações ou /xravcapes reload para forçar a atualização das capas.",
+  "name": "XRAVCAPES",
+  "description": "Displays OptiFine capes and default/original Minecraft capes for any player, without needing OptiFine installed. 100% client-side mod, with a configurable priority system between cape sources. Use /xravcapes to open the settings menu or /xravcapes reload to force cape updates. Mod's native language: Brazilian Portuguese (🇧🇷)",
   "authors": [
     "RavenaStar (ravenastar.com)"
   ],

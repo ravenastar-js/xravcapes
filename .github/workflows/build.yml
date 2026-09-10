@@ -97,7 +97,6 @@ jobs:
             printf '\n'
             printf '%s\n' "**[📥 Clique aqui para baixar o xravcapes-${VERSION}.jar](https://github.com/ravenastar-js/xravcapes/releases/download/v${VERSION}/xravcapes-${VERSION}.jar)**"
             printf '\n'
-
             printf '```\n'
             printf '%s\n' "https://github.com/ravenastar-js/xravcapes/releases/download/v${VERSION}/xravcapes-${VERSION}.jar"
             printf '```\n'
@@ -202,3 +201,4 @@ jobs:
           body_path: .github/release/body.md
           draft: false
           prerelease: false
+          # ⛔ generate_release_notes: true  ← REMOVIDO

@@ -98,22 +98,22 @@ jobs:
 
           **[📥 Clique aqui para baixar o xravcapes-${VERSION}.jar](https://github.com/ravenastar-js/xravcapes/releases/download/v${VERSION}/xravcapes-${VERSION}.jar)**
 
-          ```
+          \`\`\`
           https://github.com/ravenastar-js/xravcapes/releases/download/v${VERSION}/xravcapes-${VERSION}.jar
-          ```
+          \`\`\`
 
           ---
 
           ## 📥 Como instalar (LEIA COM ATENÇÃO)
 
           1. **Baixe apenas** o arquivo:
-             ```
+             \`\`\`
              xravcapes-${VERSION}.jar
-             ```
+             \`\`\`
           2. Abra a pasta de mods do Minecraft. No Windows, pressione \`Win + R\`, cole o caminho abaixo e aperte **Enter**:
-             ```
+             \`\`\`
              %appdata%\.minecraft\mods
-             ```
+             \`\`\`
              > 💡 Se a pasta \`mods\` não existir, crie-a manualmente dentro de \`.minecraft\`.
           3. Coloque o arquivo \`xravcapes-${VERSION}.jar\` dentro da pasta \`mods\`.
           4. Inicie o Minecraft com o **Fabric Loader** (versão \`>= 0.18.0\`) e o **[Fabric API](https://modrinth.com/mod/fabric-api)** instalado.
@@ -137,20 +137,20 @@ jobs:
 
           Para garantir que o download não foi corrompido, compare o hash do arquivo baixado com o valor abaixo:
 
-          ```
+          \`\`\`
           Arquivo: ${MOD_JAR}
           SHA-256: ${MOD_SHA}
-          ```
+          \`\`\`
 
           **Como verificar no Windows (PowerShell):**
-          ```powershell
+          \`\`\`powershell
           Get-FileHash .\xravcapes-${VERSION}.jar -Algorithm SHA256
-          ```
+          \`\`\`
 
           **Como verificar no Linux/macOS:**
-          ```bash
+          \`\`\`bash
           sha256sum xravcapes-${VERSION}.jar
-          ```
+          \`\`\`
 
           > 📄 O arquivo \`SHA256SUMS.txt\` também está anexado à release, contendo os hashes de **todos** os jars gerados.
 

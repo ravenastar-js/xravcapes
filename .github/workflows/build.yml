@@ -44,14 +44,43 @@ jobs:
         run: |
           RAW_TAG="${{ github.ref_name }}"
           VERSION="${RAW_TAG#v}"
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          # fallback para builds fora de tag (push em main / PR / manual)
+          if [ -z "$VERSION" ] || [ "$VERSION" = "main" ]; then
+            VERSION="dev-${GITHUB_SHA::7}"
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
           echo "📋 Versão resolvida: $VERSION"
+
+      - name: 🔐 Generate SHA-256 checksums
+        id: checksums
+        run: |
+          cd build/libs
+          MOD_JAR=$(ls xravcapes-!(*-sources).jar 2>/dev/null | head -n1)
+
+          if [ -z "$MOD_JAR" ]; then
+            echo "❌ Nenhum jar principal encontrado em build/libs"
+            exit 1
+          fi
+
+          MOD_SHA=$(sha256sum "$MOD_JAR" | awk '{print $1}')
+          echo "mod_jar=$MOD_JAR" >> "$GITHUB_OUTPUT"
+          echo "mod_sha=$MOD_SHA" >> "$GITHUB_OUTPUT"
+
+          echo "📦 Mod principal: $MOD_JAR"
+          echo "🔐 SHA-256: $MOD_SHA"
+
+          # Gera arquivo de checksums para anexar à release
+          sha256sum *.jar > SHA256SUMS.txt
+          echo "📄 SHA256SUMS.txt gerado:"
+          cat SHA256SUMS.txt
 
       - name: 📤 Upload build artifact
         uses: actions/upload-artifact@v6
         with:
           name: xravcapes-jar
-          path: build/libs/*.jar
+          path: |
+            build/libs/*.jar
+            build/libs/SHA256SUMS.txt
           if-no-files-found: error
 
       - name: 🎉 Create GitHub Release
@@ -61,11 +90,74 @@ jobs:
           files: |
             build/libs/xravcapes-!(*-sources).jar
             build/libs/xravcapes-*-sources.jar
+            build/libs/SHA256SUMS.txt
           name: "🌱 v${{ steps.version.outputs.version }}"
           body: |
             ## 🚀 XRAV CAPES publicado!
 
             **🧥 Mod client-side para Fabric (Minecraft `1.21.11`) que exibe capas do OptiFine e capas nativas/padrão do Minecraft, sem precisar do OptiFine instalado.**
+
+            ---
+
+            ## ⬇️ Download direto
+
+            **[📥 Clique aqui para baixar o xravcapes-${{ steps.version.outputs.version }}.jar](https://github.com/ravenastar-js/xravcapes/releases/download/v${{ steps.version.outputs.version }}/xravcapes-${{ steps.version.outputs.version }}.jar)**
+
+            ```
+            https://github.com/ravenastar-js/xravcapes/releases/download/v${{ steps.version.outputs.version }}/xravcapes-${{ steps.version.outputs.version }}.jar
+            ```
+
+            ---
+
+            ## 📥 Como instalar (LEIA COM ATENÇÃO)
+
+            1. **Baixe apenas** o arquivo:
+               ```
+               xravcapes-${{ steps.version.outputs.version }}.jar
+               ```
+            2. Abra a pasta de mods do Minecraft. No Windows, pressione `Win + R`, cole o caminho abaixo e aperte **Enter**:
+               ```
+               %appdata%\.minecraft\mods
+               ```
+               > 💡 Se a pasta `mods` não existir, crie-a manualmente dentro de `.minecraft`.
+            3. Coloque o arquivo `xravcapes-${{ steps.version.outputs.version }}.jar` dentro da pasta `mods`.
+            4. Inicie o Minecraft com o **Fabric Loader** (versão `>= 0.18.0`) e o **[Fabric API](https://modrinth.com/mod/fabric-api)** instalado.
+
+            ---
+
+            ## ⚠️ AVISO IMPORTANTE — NÃO FAÇA ISSO
+
+            ❌ **NÃO baixe nem coloque o arquivo `xravcapes-${{ steps.version.outputs.version }}-sources.jar` na pasta `mods`.**
+
+            O arquivo `-sources.jar` contém **apenas o código-fonte** para desenvolvedores e **NÃO é um mod funcional**. Se você colocá-lo na pasta `mods`:
+            - O Minecraft **não vai carregar o mod**;
+            - O jogo pode apresentar **erros ou travar**;
+            - Nada funcionará como esperado.
+
+            ✅ Use **somente** o `xravcapes-${{ steps.version.outputs.version }}.jar`.
+
+            ---
+
+            ## 🔐 Verificação de integridade (SHA-256)
+
+            Para garantir que o download não foi corrompido, compare o hash do arquivo baixado com o valor abaixo:
+
+            ```
+            Arquivo: ${{ steps.checksums.outputs.mod_jar }}
+            SHA-256: ${{ steps.checksums.outputs.mod_sha }}
+            ```
+
+            **Como verificar no Windows (PowerShell):**
+            ```powershell
+            Get-FileHash .\xravcapes-${{ steps.version.outputs.version }}.jar -Algorithm SHA256
+            ```
+
+            **Como verificar no Linux/macOS:**
+            ```bash
+            sha256sum xravcapes-${{ steps.version.outputs.version }}.jar
+            ```
+
+            > 📄 O arquivo `SHA256SUMS.txt` também está anexado à release, contendo os hashes de **todos** os jars gerados.
 
             ---
 
@@ -81,6 +173,7 @@ jobs:
 
             ## 🔗 Links úteis
 
+            - **📥 [Download direto — xravcapes-${{ steps.version.outputs.version }}.jar](https://github.com/ravenastar-js/xravcapes/releases/download/v${{ steps.version.outputs.version }}/xravcapes-${{ steps.version.outputs.version }}.jar)**
             - **💻 [Código-fonte](https://github.com/ravenastar-js/xravcapes)**
             - **🧵 [Fabric API (Modrinth)](https://modrinth.com/mod/fabric-api)**
 

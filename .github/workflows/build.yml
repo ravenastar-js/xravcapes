@@ -55,10 +55,18 @@ jobs:
         id: checksums
         run: |
           cd build/libs
-          MOD_JAR=$(ls xravcapes-!(*-sources).jar 2>/dev/null | head -n1)
+
+          # Encontra o jar principal (exclui -sources e -dev/javadoc)
+          MOD_JAR=$(find . -maxdepth 1 -type f -name 'xravcapes-*.jar' \
+                    ! -name '*-sources.jar' \
+                    ! -name '*-javadoc.jar' \
+                    ! -name '*-dev.jar' \
+                    | head -n1 | sed 's|^\./||')
 
           if [ -z "$MOD_JAR" ]; then
             echo "❌ Nenhum jar principal encontrado em build/libs"
+            echo "📂 Conteúdo atual:"
+            ls -la
             exit 1
           fi
 

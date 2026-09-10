@@ -111,22 +111,22 @@ jobs:
 
             **[📥 Clique aqui para baixar o xravcapes-${{ steps.version.outputs.version }}.jar](https://github.com/ravenastar-js/xravcapes/releases/download/v${{ steps.version.outputs.version }}/xravcapes-${{ steps.version.outputs.version }}.jar)**
 
-            ```
+            ~~~
             https://github.com/ravenastar-js/xravcapes/releases/download/v${{ steps.version.outputs.version }}/xravcapes-${{ steps.version.outputs.version }}.jar
-            ```
+            ~~~
 
             ---
 
             ## 📥 Como instalar (LEIA COM ATENÇÃO)
 
             1. **Baixe apenas** o arquivo:
-               ```
+               ~~~
                xravcapes-${{ steps.version.outputs.version }}.jar
-               ```
+               ~~~
             2. Abra a pasta de mods do Minecraft. No Windows, pressione `Win + R`, cole o caminho abaixo e aperte **Enter**:
-               ```
+               ~~~
                %appdata%\.minecraft\mods
-               ```
+               ~~~
                > 💡 Se a pasta `mods` não existir, crie-a manualmente dentro de `.minecraft`.
             3. Coloque o arquivo `xravcapes-${{ steps.version.outputs.version }}.jar` dentro da pasta `mods`.
             4. Inicie o Minecraft com o **Fabric Loader** (versão `>= 0.18.0`) e o **[Fabric API](https://modrinth.com/mod/fabric-api)** instalado.
@@ -150,20 +150,20 @@ jobs:
 
             Para garantir que o download não foi corrompido, compare o hash do arquivo baixado com o valor abaixo:
 
-            ```
+            ~~~
             Arquivo: ${{ steps.checksums.outputs.mod_jar }}
             SHA-256: ${{ steps.checksums.outputs.mod_sha }}
-            ```
+            ~~~
 
             **Como verificar no Windows (PowerShell):**
-            ```powershell
+            ~~~powershell
             Get-FileHash .\xravcapes-${{ steps.version.outputs.version }}.jar -Algorithm SHA256
-            ```
+            ~~~
 
             **Como verificar no Linux/macOS:**
-            ```bash
+            ~~~bash
             sha256sum xravcapes-${{ steps.version.outputs.version }}.jar
-            ```
+            ~~~
 
             > 📄 O arquivo `SHA256SUMS.txt` também está anexado à release, contendo os hashes de **todos** os jars gerados.
 
@@ -191,8 +191,6 @@ jobs:
             **🔖 Tag:** ${{ github.ref_name }}
             **🎮 Minecraft:** `1.21.11` (Fabric Loader `>= 0.18.0`)
             **⚡ Publicado automaticamente via GitHub Actions**
-
-            > 🎯 **Uso:** exibir capas do OptiFine e do Minecraft no client, sem depender do OptiFine instalado.
           draft: false
           prerelease: false
           generate_release_notes: true

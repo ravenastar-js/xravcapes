@@ -44,27 +44,6 @@ Looking for older or newer builds? Check the **[Releases page](https://github.co
 3. Place `xravcapes-1.0.0.jar` inside the `mods` folder.
 4. Launch Minecraft with **Fabric Loader** (`>= 0.18.0`) and **[Fabric API](https://modrinth.com/mod/fabric-api)** installed.
 
-## 🔐 Verifying file integrity (SHA-256)
-
-To make sure your download wasn't corrupted or tampered with, compare its hash against the value below:
-
-```
-File:   xravcapes-1.0.0.jar
-SHA-256: 49ea97a7f4011939bc2686ff085862d8470ad58bdd6b19af599ef97a64086f8c
-```
-
-**Windows (PowerShell):**
-```powershell
-Get-FileHash .\xravcapes-1.0.0.jar -Algorithm SHA256
-```
-
-**Linux/macOS:**
-```bash
-sha256sum xravcapes-1.0.0.jar
-```
-
-> 📄 A `SHA256SUMS.txt` file is also attached to each release, containing the hashes of **all** generated jars.
-
 ## 📋 Requirements
 
 | Requirement | Version used | Link |

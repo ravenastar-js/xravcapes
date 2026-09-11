@@ -12,65 +12,114 @@
 
 [![Build](https://github.com/ravenastar-js/xravcapes/actions/workflows/build.yml/badge.svg)](https://github.com/ravenastar-js/xravcapes/actions/workflows/build.yml) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Minecraft](https://img.shields.io/badge/minecraft-1.21.11-brightgreen.svg)](https://fabricmc.net/use/installer/)
 
-Mod **client-side** para Fabric (Minecraft `1.21.11`) que exibe capas do OptiFine e capas nativas/padrão do Minecraft, sem precisar do OptiFine instalado.
+A **client-side** mod for Fabric (Minecraft `1.21.11`) that displays OptiFine capes and Minecraft's native/default capes, without needing OptiFine installed.
 
 <p align="center">
   <a title="Fabric API" href="https://github.com/FabricMC/fabric">
     <img src="https://i.imgur.com/Ol1Tcf8.png" width="151" height="50" />
   </a>
   <br /><br />
-  <a title="Minha Collection no Modrinth" href="https://modrinth.com/collection/QEwOIHfO">
+  <a title="My Collection on Modrinth" href="https://modrinth.com/collection/QEwOIHfO">
     <img src="https://img.shields.io/badge/Modrinth-Collection-00AF5C?style=for-the-badge&logo=modrinth&logoColor=white" alt="Modrinth Collection" />
   </a>
 </p>
 
-## 📋 Requisitos
+## ⬇️ Download
 
-| Requisito | Versão usada | Link |
+**📥 [Direct download — xravcapes-1.0.0.jar](https://github.com/ravenastar-js/xravcapes/releases/download/v1.0.0/xravcapes-1.0.0.jar)**
+
+Looking for older or newer builds? Check the **[Releases page](https://github.com/ravenastar-js/xravcapes/releases)**.
+
+> [!WARNING]
+> Do **not** download or place `xravcapes-1.0.0-sources.jar` in your `mods` folder. That file contains only the source code for developers and is **not a functional mod**. Placing it in `mods` will prevent Minecraft from loading the mod correctly and may cause crashes or errors. Use only the `xravcapes-1.0.0.jar` file.
+
+## 📥 Installation
+
+1. Download **only** the file `xravcapes-1.0.0.jar` from the link above.
+2. Open your Minecraft mods folder. On Windows, press `Win + R`, paste the path below, and hit **Enter**:
+   ```
+   %appdata%\.minecraft\mods
+   ```
+   > 💡 If the `mods` folder doesn't exist yet, create it manually inside `.minecraft`.
+3. Place `xravcapes-1.0.0.jar` inside the `mods` folder.
+4. Launch Minecraft with **Fabric Loader** (`>= 0.18.0`) and **[Fabric API](https://modrinth.com/mod/fabric-api)** installed.
+
+## 🔐 Verifying file integrity (SHA-256)
+
+To make sure your download wasn't corrupted or tampered with, compare its hash against the value below:
+
+```
+File:   xravcapes-1.0.0.jar
+SHA-256: 49ea97a7f4011939bc2686ff085862d8470ad58bdd6b19af599ef97a64086f8c
+```
+
+**Windows (PowerShell):**
+```powershell
+Get-FileHash .\xravcapes-1.0.0.jar -Algorithm SHA256
+```
+
+**Linux/macOS:**
+```bash
+sha256sum xravcapes-1.0.0.jar
+```
+
+> 📄 A `SHA256SUMS.txt` file is also attached to each release, containing the hashes of **all** generated jars.
+
+## 📋 Requirements
+
+| Requirement | Version used | Link |
 |---|---|---|
-| Fabric Loader | `>= 0.18.0` | [Instalador oficial](https://fabricmc.net/use/installer/) |
+| Fabric Loader | `>= 0.18.0` | [Official installer](https://fabricmc.net/use/installer/) |
 | Fabric API | `0.141.6+1.21.11` | [Modrinth](https://modrinth.com/mod/fabric-api/version/0.141.6+1.21.11) · [GitHub](https://github.com/FabricMC/fabric-api) |
-| Minecraft | `1.21.11` | *(nenhum link aplicável)* |
+| Minecraft | `1.21.11` | *(no applicable link)* |
 | Java | `>= 21` | [Adoptium](https://adoptium.net/) |
 
-Todos os requisitos acima já são declarados como dependências no `fabric.mod.json`; o Fabric Loader recusa carregar o XRAVCAPES se algum deles estiver ausente ou em versão incompatível.
+All requirements above are already declared as dependencies in `fabric.mod.json`; Fabric Loader will refuse to load XRAVCAPES if any of them is missing or has an incompatible version.
 
-> 💡 Instale o Minecraft 1.21.11 usando o Fabric Loader.
+> 💡 Install Minecraft 1.21.11 using Fabric Loader.
 
-## ✨ Funcionalidades
+## ✨ Features
 
-- Sistema de **prioridade por pontuação** (hierarquia):
-  | Fonte | Score |
+- **Score-based priority system** (hierarchy):
+
+  | Source | Score |
   |---|---|
-  | Capa do OptiFine | **1.0** |
-  | Capa padrão/original do Minecraft | **0.9** |
-  | Outras capas (fonte customizada) | **0.8** |
-- Menu de configurações acessado inteiramente por comando (sem atalho de teclado), com `/xravcapes` para escolher:
-  - **Automático**, que respeita a hierarquia acima. Se o jogador tiver capa do OptiFine e do Minecraft, o mod sempre mostra a do OptiFine.
-  - Forçar sempre **OptiFine**.
-  - Forçar sempre **Minecraft (vanilla)**.
-  - **Desativar** a exibição customizada.
-- Pré-visualização rápida da capa resolvida no próprio menu.
-- `/xravcapes reload` para forçar a atualização das capas em cache.
-- **100% client-side**: não precisa estar no servidor.
-- Tradução automática: usa `pt_br` / `pt_pt` se o idioma do Minecraft do jogador for português, e cai para `en_us` (padrão) em qualquer outro idioma. Isso é feito pelo próprio sistema de idiomas do Minecraft, sem código extra, então funciona de forma automática e nativa.
+  | 🧡 OptiFine cape | **1.0** |
+  | 💚 Minecraft default/original cape | **0.9** |
+  | 🔵 Other capes (custom source) | **0.8** |
 
-## 🔧 Compatibilidade
+- Settings menu accessed entirely through a command (no keybind needed), via `/xravcapes`, to choose:
+  - **Automatic**, which follows the hierarchy above. If the player has both an OptiFine and a Minecraft cape, the mod always shows the OptiFine one.
+  - Force always **OptiFine**.
+  - Force always **Minecraft (vanilla)**.
+  - **Disable** custom cape display entirely.
+- Quick preview of the resolved cape right in the menu.
+- `/xravcapes reload` to force-refresh cached capes.
+- **100% client-side**: no need for it to be installed on the server.
+- Automatic translation: uses `pt_br` / `pt_pt` if the player's Minecraft language is Portuguese, and falls back to `en_us` (default) for any other language. This is handled natively by Minecraft's own language system, with no extra code, so it works automatically.
 
-Este projeto está **travado especificamente na versão `1.21.11`**:
+## 🔧 Compatibility
+
+This project is **locked specifically to version `1.21.11`**:
 
 - `minecraft_version=1.21.11`
-- `yarn_mappings=1.21.11+build.6` (última build de Yarn disponível; a partir da próxima versão principal a Mojang passa a exigir Mojang Mappings)
-- `loader_version=0.18.1` (mínimo exigido pelo Fabric para 1.21.11)
+- `yarn_mappings=1.21.11+build.6` (latest available Yarn build; starting from the next major version, Mojang requires Mojang Mappings)
+- `loader_version=0.18.1` (minimum required by Fabric for 1.21.11)
 - `fabric_version=0.141.6+1.21.11`
-- Loom `1.14`, exigido a partir do 1.21.11
+- Loom `1.14`, required starting from 1.21.11
 
-O `fabric.mod.json` também declara a dependência exata `"minecraft": "1.21.11"`, então o mod recusa carregar em qualquer outra versão, evitando comportamento quebrado/instável em versões não testadas.
+`fabric.mod.json` also declares the exact dependency `"minecraft": "1.21.11"`, so the mod refuses to load on any other version, avoiding broken/unstable behavior on untested versions.
 
-## 📜 Créditos
+## 🔗 Useful links
+
+- **📥 [Direct download — xravcapes-1.0.0.jar](https://github.com/ravenastar-js/xravcapes/releases/download/v1.0.0/xravcapes-1.0.0.jar)**
+- **🧵 [Fabric API (Modrinth)](https://modrinth.com/mod/fabric-api)**
+- **🚀 [Releases](https://github.com/ravenastar-js/xravcapes/releases)**
+
+## 📜 Credits
 
 <div align="center">
 
-## Feito com 💚 por [RavenaStar](https://ravenastar.com)
+## Made with 💚 by [RavenaStar](https://ravenastar.com)
 
 </div>

@@ -4,7 +4,7 @@
 ---
 
 > [!NOTE]
-> This mod was created because [OptiFine 1.21.11 HD U J9](https://optifine.net/adloadx?f=OptiFine_1.21.11_HD_U_J8.jar) does not work properly with Fabric Loader on Minecraft 1.21.11. XRAVCAPES solves this issue by displaying OptiFine capes without requiring OptiFine itself.
+> This mod was developed to address compatibility issues where [OptiFine 1.21.11 HD U J9](https://optifine.net/adloadx?f=OptiFine_1.21.11_HD_U_J8.jar) fails to function correctly with Fabric Loader on Minecraft 1.21.11. XRAVCAPES provides a solution by rendering OptiFine capes without requiring OptiFine itself. Please note that this fix applies exclusively to players using the Fabric 1.21.1 version of Minecraft through Microsoft’s official launcher.
 
 ---
 

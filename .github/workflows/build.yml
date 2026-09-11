@@ -88,15 +88,15 @@ jobs:
           mkdir -p .github/release
 
           cat > .github/release/body.md <<EOF
-          ## 🚀 XRAV CAPES publicado!
+          ## 🚀 XRAV CAPES published!
 
-          **🧥 Mod client-side para Fabric (Minecraft \`1.21.11\`) que exibe capas do OptiFine e capas nativas/padrão do Minecraft, sem precisar do OptiFine instalado.**
+          **🧥 Client-side mod for Fabric (Minecraft \`1.21.11\`) that displays OptiFine capes and Minecraft's native/default capes, without needing OptiFine installed.**
 
           ---
 
-          ## ⬇️ Download direto
+          ## ⬇️ Direct download
 
-          **[📥 Clique aqui para baixar o xravcapes-${VERSION}.jar](https://github.com/ravenastar-js/xravcapes/releases/download/v${VERSION}/xravcapes-${VERSION}.jar)**
+          **[📥 Click here to download xravcapes-${VERSION}.jar](https://github.com/ravenastar-js/xravcapes/releases/download/v${VERSION}/xravcapes-${VERSION}.jar)**
 
           \`\`\`
           https://github.com/ravenastar-js/xravcapes/releases/download/v${VERSION}/xravcapes-${VERSION}.jar
@@ -104,82 +104,82 @@ jobs:
 
           ---
 
-          ## 📥 Como instalar (LEIA COM ATENÇÃO)
+          ## 📥 How to install (READ CAREFULLY)
 
-          1. **Baixe apenas** o arquivo:
+          1. **Download only** the file:
              \`\`\`
              xravcapes-${VERSION}.jar
              \`\`\`
-          2. Abra a pasta de mods do Minecraft. No Windows, pressione \`Win + R\`, cole o caminho abaixo e aperte **Enter**:
+          2. Open your Minecraft mods folder. On Windows, press \`Win + R\`, paste the path below, and hit **Enter**:
              \`\`\`
              %appdata%\.minecraft\mods
              \`\`\`
-             > 💡 Se a pasta \`mods\` não existir, crie-a manualmente dentro de \`.minecraft\`.
-          3. Coloque o arquivo \`xravcapes-${VERSION}.jar\` dentro da pasta \`mods\`.
-          4. Inicie o Minecraft com o **Fabric Loader** (versão \`>= 0.18.0\`) e o **[Fabric API](https://modrinth.com/mod/fabric-api)** instalado.
+             > 💡 If the \`mods\` folder doesn't exist, create it manually inside \`.minecraft\`.
+          3. Place the file \`xravcapes-${VERSION}.jar\` inside the \`mods\` folder.
+          4. Launch Minecraft with **Fabric Loader** (version \`>= 0.18.0\`) and **[Fabric API](https://modrinth.com/mod/fabric-api)** installed.
 
           ---
 
-          ## ⚠️ AVISO IMPORTANTE — NÃO FAÇA ISSO
+          ## ⚠️ IMPORTANT WARNING — DO NOT DO THIS
 
-          ❌ **NÃO baixe nem coloque o arquivo \`xravcapes-${VERSION}-sources.jar\` na pasta \`mods\`.**
+          ❌ **DO NOT download or place the file \`xravcapes-${VERSION}-sources.jar\` in the \`mods\` folder.**
 
-          O arquivo \`-sources.jar\` contém **apenas o código-fonte** para desenvolvedores e **NÃO é um mod funcional**. Se você colocá-lo na pasta \`mods\`:
-          - O Minecraft **não vai carregar o mod**;
-          - O jogo pode apresentar **erros ou travar**;
-          - Nada funcionará como esperado.
+          The \`-sources.jar\` file contains **only the source code** for developers and is **NOT a functional mod**. If you place it in the \`mods\` folder:
+          - Minecraft **will not load the mod**;
+          - The game may show **errors or crash**;
+          - Nothing will work as expected.
 
-          ✅ Use **somente** o \`xravcapes-${VERSION}.jar\`.
+          ✅ Use **only** \`xravcapes-${VERSION}.jar\`.
 
           ---
 
-          ## 🔐 Verificação de integridade (SHA-256)
+          ## 🔐 Integrity verification (SHA-256)
 
-          Para garantir que o download não foi corrompido, compare o hash do arquivo baixado com o valor abaixo:
+          To make sure the download wasn't corrupted, compare the hash of the downloaded file with the value below:
 
           \`\`\`
-          Arquivo: ${MOD_JAR}
+          File: ${MOD_JAR}
           SHA-256: ${MOD_SHA}
           \`\`\`
 
-          **Como verificar no Windows (PowerShell):**
+          **How to verify on Windows (PowerShell):**
           \`\`\`powershell
           Get-FileHash .\xravcapes-${VERSION}.jar -Algorithm SHA256
           \`\`\`
 
-          **Como verificar no Linux/macOS:**
+          **How to verify on Linux/macOS:**
           \`\`\`bash
           sha256sum xravcapes-${VERSION}.jar
           \`\`\`
 
-          > 📄 O arquivo \`SHA256SUMS.txt\` também está anexado à release, contendo os hashes de **todos** os jars gerados.
+          > 📄 The \`SHA256SUMS.txt\` file is also attached to the release, containing the hashes of **all** generated jars.
 
           ---
 
-          ## 🥇 Hierarquia de prioridade das capas
+          ## 🥇 Cape priority hierarchy
 
-          | Fonte | Score |
+          | Source | Score |
           |---|---|
-          | 🧡 Capa do OptiFine | **1.0** |
-          | 💚 Capa padrão/original do Minecraft | **0.9** |
-          | 🔵 Outras capas (fonte customizada) | **0.8** |
+          | 🧡 OptiFine cape | **1.0** |
+          | 💚 Minecraft default/original cape | **0.9** |
+          | 🔵 Other capes (custom source) | **0.8** |
 
           ---
 
-          ## 🔗 Links úteis
+          ## 🔗 Useful links
 
-          - **📥 [Download direto — xravcapes-${VERSION}.jar](https://github.com/ravenastar-js/xravcapes/releases/download/v${VERSION}/xravcapes-${VERSION}.jar)**
-          - **💻 [Código-fonte](https://github.com/ravenastar-js/xravcapes)**
+          - **📥 [Direct download — xravcapes-${VERSION}.jar](https://github.com/ravenastar-js/xravcapes/releases/download/v${VERSION}/xravcapes-${VERSION}.jar)**
+          - **💻 [Source code](https://github.com/ravenastar-js/xravcapes)**
           - **🧵 [Fabric API (Modrinth)](https://modrinth.com/mod/fabric-api)**
 
           ---
 
-          **🌱 Versão:** ${VERSION}
+          **🌱 Version:** ${VERSION}
           **🔖 Tag:** ${TAG}
           **🎮 Minecraft:** \`1.21.11\` (Fabric Loader \`>= 0.18.0\`)
-          **⚡ Publicado automaticamente via GitHub Actions**
+          **⚡ Automatically published via GitHub Actions**
 
-          > 🎯 **Uso:** exibir capas do OptiFine e do Minecraft no client, sem depender do OptiFine instalado.
+          > 🎯 **Usage:** display OptiFine and Minecraft capes on the client, without depending on OptiFine.
           EOF
 
           echo "📄 Body gerado:"

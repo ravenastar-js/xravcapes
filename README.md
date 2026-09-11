@@ -8,6 +8,12 @@
 
 ---
 
+<p align="center">
+  <a href="https://github.com/ravenastar-js/xravcapes">
+    <img src="https://raw.githubusercontent.com/ravenastar-js/xravcapes/refs/heads/main/src/main/resources/assets/xravcapes/icon.png" alt="xravcapes" width="150" />
+  </a>
+</p>
+
 # XRAVCAPES
 
 [![Build](https://github.com/ravenastar-js/xravcapes/actions/workflows/build.yml/badge.svg)](https://github.com/ravenastar-js/xravcapes/actions/workflows/build.yml) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Minecraft](https://img.shields.io/badge/minecraft-1.21.11-brightgreen.svg)](https://fabricmc.net/use/installer/)

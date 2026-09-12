@@ -81,18 +81,6 @@ Looking for older or newer builds? Check the **[Releases page](https://github.co
 - **100% client-side**: no need for it to be installed on the server.
 - Automatic translation: uses `pt_br` / `pt_pt` if the player's Minecraft language is Portuguese, and falls back to `en_us` (default) for any other language. This is handled natively by Minecraft's own language system, with no extra code, so it works automatically.
 
-## 🔧 Compatibility
-
-This project is **locked specifically to version `1.21.11`**:
-
-- `minecraft_version=1.21.11`
-- `yarn_mappings=1.21.11+build.6` (latest available Yarn build; starting from the next major version, Mojang requires Mojang Mappings)
-- `loader_version=0.18.1` (minimum required by Fabric for 1.21.11)
-- `fabric_version=0.141.6+1.21.11`
-- Loom `1.14`, required starting from 1.21.11
-
-`fabric.mod.json` also declares the exact dependency `"minecraft": "1.21.11"`, so the mod refuses to load on any other version, avoiding broken/unstable behavior on untested versions.
-
 ## 🔗 Useful links
 
 - **📥 [Direct download — xravcapes-1.0.0.jar](https://github.com/ravenastar-js/xravcapes/releases/download/v1.0.0/xravcapes-1.0.0.jar)**

@@ -54,12 +54,10 @@ Looking for older or newer builds? Check the **[Releases page](https://github.co
 
 | Requirement | Version used | Link |
 |---|---|---|
-| Fabric Loader | `>= 0.18.0` | [Official installer](https://fabricmc.net/use/installer/) |
+| Minecraft Oficial launcher | *(N/A)* | [Official installer](https://www.minecraft.net/download) |
+| Fabric Loader | `>= 0.18.0` · `1.21.11`| [Official installer](https://fabricmc.net/use/installer/) |
 | Fabric API | `0.141.6+1.21.11` | [Modrinth](https://modrinth.com/mod/fabric-api/version/0.141.6+1.21.11) · [GitHub](https://github.com/FabricMC/fabric-api) |
-| Minecraft | `1.21.11` | *(no applicable link)* |
 | Java | `>= 21` | [Adoptium](https://adoptium.net/) |
-
-All requirements above are already declared as dependencies in `fabric.mod.json`; Fabric Loader will refuse to load XRAVCAPES if any of them is missing or has an incompatible version.
 
 > 💡 Install Minecraft 1.21.11 using Fabric Loader.
 

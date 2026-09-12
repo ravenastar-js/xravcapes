@@ -54,7 +54,7 @@ Looking for older or newer builds? Check the **[Releases page](https://github.co
 
 | Requirement | Version used | Link |
 |---|---|---|
-| Minecraft Oficial launcher | *(N/A)* | [Official installer](https://www.minecraft.net/download) |
+| Minecraft Official Launcher | *(N/A)* | [Official installer](https://www.minecraft.net/download) |
 | Fabric Loader | `>= 0.18.0` · `1.21.11`| [Official installer](https://fabricmc.net/use/installer/) |
 | Fabric API | `0.141.6+1.21.11` | [Modrinth](https://modrinth.com/mod/fabric-api/version/0.141.6+1.21.11) · [GitHub](https://github.com/FabricMC/fabric-api) |
 | Java | `>= 21` | [Adoptium](https://adoptium.net/) |
